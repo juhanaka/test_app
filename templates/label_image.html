@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body %}
+<br>
+<div class="row">
+    <div class="panel">
+        <p>Note: You can use buttons 1-4 to label</p>
+    </div>
+</div>
+<div class="row">
+    <div class="large-8 columns">
+        <img src="{{ url_for('static', filename='images/') }}{{next_img}}">
+    </div>
+    <div class="large-4 columns">
+        <form action="{{url_for('label_image')}}" method="post" class="hidden_form">
+            <ul class="stack button-group">
+            {% for option in [('tp', 'True positive'), ('fp', 'False positive'),
+                              ('tn', 'True negative'), ('fn', 'False negative')] %}
+                <li><button type="submit" name="label" value="{{option[0]}}" id="labels-{{loop.index}}" class="button expand">{{loop.index}}-{{option[1]}}</button></li>
+            {% endfor %}
+            </ul>
+        <input readonly name="fname" type="text" value="{{next_img}}" style="display: none;">
+        </form>
+    </div>
+</div>
+{% endblock %}

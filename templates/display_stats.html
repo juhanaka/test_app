@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row">
+    <table>
+      <caption>Confusion matrix</caption>
+      <tr>
+        <th scope="column"></th>
+        <th scope="column">Condition positive</th>
+        <th scope="column">Condition negative</th>
+      </tr>
+      <tr>
+        <th scope="row">Test positive</th>
+        <td>TP: {{stats.tp}}</td>
+        <td>FP: {{stats.fp}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Test negative</th>
+        <td>FN: {{stats.fn}}</td>
+        <td>TN: {{stats.tn}}</td>
+      </tr>
+    </table>
+</div>
+<div class="row">
+    <p>Precision: {{stats.precision}}</p>
+    <p>Recall: {{stats.recall}}</p>
+    <p>F1 Score: {{stats.f1_score}}</p>
+
+</div>
+{% endblock %}

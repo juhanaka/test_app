@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" >
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/foundation.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
+    <title>Brain4Cars - Testing</title>
+</head>
+
+<body>
+{% block body %}{% endblock %}
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="{{ url_for('static', filename='js/shortkeys.js')}}"></script>
+</body>
+
+</html>
